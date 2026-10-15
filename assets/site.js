@@ -1,12 +1,16 @@
 /* ==========================================================================
    Baito_84170 — 交互脚本
-   只做三件事：主题切换、顶栏吸顶分割线、页脚年份。没有依赖，没有构建。
+   主题切换、顶栏分割线、滚动入场、页脚年份。无依赖、无构建。
    ========================================================================== */
 (function () {
   'use strict';
 
   var root = document.documentElement;
   var KEY = 'theme';
+
+  // 告诉 CSS「JS 可用」——滚动入场的初始隐藏态只在 .js 下生效，
+  // 这样脚本挂了也不会留下不可见的内容
+  root.classList.add('js');
 
   function current() {
     return root.getAttribute('data-theme') || 'light';
@@ -27,7 +31,7 @@
     }
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute('content', mode === 'dark' ? '#0c0d12' : '#fbfbfd');
+      meta.setAttribute('content', mode === 'dark' ? '#08090e' : '#fbfbfe');
     }
   }
 
@@ -48,6 +52,29 @@
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // ------------------------------------------------------------ 入场
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length) {
+    var showAll = function () {
+      Array.prototype.forEach.call(reveals, function (el) { el.classList.add('is-in'); });
+    };
+    if (!('IntersectionObserver' in window)) {
+      showAll();
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            entries[i].target.classList.add('is-in');
+            io.unobserve(entries[i].target);
+          }
+        }
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+      Array.prototype.forEach.call(reveals, function (el) { io.observe(el); });
+      // 兜底：3 秒后仍未入场的直接显示，避免任何情况下内容缺失
+      window.setTimeout(showAll, 3000);
+    }
   }
 
   // ------------------------------------------------------------ 年份

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>页面走丢了 | Baito_84170的BLog</title>
+<title>页面走丢了 | Baito_84170</title>
 <meta name="description" content="这个页面不存在，或者已经被搬走了。">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#fbfbfd">
+<meta name="theme-color" content="#fbfbfe">
 
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -26,11 +26,13 @@
     }
   } catch (e) {}
   var m = document.querySelector('meta[name="theme-color"]');
-  if (m) m.setAttribute('content', d.getAttribute('data-theme') === 'dark' ? '#0c0d12' : '#fbfbfd');
+  if (m) m.setAttribute('content', d.getAttribute('data-theme') === 'dark' ? '#08090e' : '#fbfbfe');
 })();
 </script>
 </head>
 <body>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -40,9 +42,8 @@
     </a>
     <nav class="nav" aria-label="主导航">
       <a href="/">首页</a>
+      <a href="/projects/baotuquan-light/">项目</a>
       <a href="/about/">关于</a>
-      <a href="/tags/blog/">标签</a>
-      <a href="/archives/">归档</a>
       <a href="/friendlink/">友链</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="切换深浅色">
@@ -55,12 +56,12 @@
 <main id="main">
   <div class="wrap">
     <section class="hero">
-      <img class="avatar" src="/images/avatar.svg" alt="" width="68" height="68">
-      <h1>404</h1>
+      <span class="hero-badge"><span class="dot" aria-hidden="true"></span>404</span>
+      <h1><span class="grad">页面走丢了</span></h1>
       <p class="tagline">这个页面不存在，或者已经被我搬走了。</p>
       <div class="hero-actions">
-        <a class="btn" href="/">回到首页</a>
-        <a class="btn" href="/archives/">看看归档</a>
+        <a class="btn btn-primary" href="/">回到首页</a>
+        <a class="btn" href="/projects/baotuquan-light/">看看我的项目</a>
       </div>
     </section>
   </div>

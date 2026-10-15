@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Baito_84170的BLog</title>
-<meta name="description" content="Baito_84170的博客，记录每一个天马行空的点子。">
+<title>Baito_84170</title>
+<meta name="description" content="Baito_84170 的个人主页 —— 记录每一个天马行空的点子。">
 <meta name="author" content="Baito_84170">
-<meta name="theme-color" content="#fbfbfd">
+<meta name="theme-color" content="#fbfbfe">
 
 <link rel="canonical" href="https://baito-84170.github.io/">
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
@@ -16,9 +16,9 @@
 <link rel="stylesheet" href="/assets/site.css">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Baito_84170的BLog">
-<meta property="og:title" content="Baito_84170的BLog">
-<meta property="og:description" content="Baito_84170的博客，记录每一个天马行空的点子。">
+<meta property="og:site_name" content="Baito_84170">
+<meta property="og:title" content="Baito_84170">
+<meta property="og:description" content="记录每一个天马行空的点子。">
 <meta property="og:url" content="https://baito-84170.github.io/">
 <meta name="twitter:card" content="summary">
 
@@ -35,13 +35,15 @@
     }
   } catch (e) {}
   var m = document.querySelector('meta[name="theme-color"]');
-  if (m) m.setAttribute('content', d.getAttribute('data-theme') === 'dark' ? '#0c0d12' : '#fbfbfd');
+  if (m) m.setAttribute('content', d.getAttribute('data-theme') === 'dark' ? '#08090e' : '#fbfbfe');
 })();
 </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">跳到正文</a>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -51,9 +53,8 @@
     </a>
     <nav class="nav" aria-label="主导航">
       <a href="/" aria-current="page">首页</a>
+      <a href="/projects/baotuquan-light/">项目</a>
       <a href="/about/">关于</a>
-      <a href="/tags/blog/">标签</a>
-      <a href="/archives/">归档</a>
       <a href="/friendlink/">友链</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="切换深浅色">
@@ -67,10 +68,14 @@
   <div class="wrap">
 
     <section class="hero">
-      <img class="avatar" src="/images/avatar.svg" alt="Baito_84170" width="68" height="68">
-      <h1>Baito_84170</h1>
-      <p class="tagline">Baito_84170的博客，记录每一个天马行空的点子。</p>
+      <span class="hero-badge"><span class="dot" aria-hidden="true"></span>山东大学趵突泉校区</span>
+      <h1><span class="grad">Baito_84170</span></h1>
+      <p class="tagline">记录每一个天马行空的点子。</p>
       <div class="hero-actions">
+        <a class="btn btn-primary" href="#project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6M12 15v6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M3 12h6M15 12h6M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></svg>
+          看看我的项目
+        </a>
         <a class="btn" href="/about/">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
           关于我
@@ -79,33 +84,113 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
           写封邮件
         </a>
-        <a class="btn" href="/friendlink/">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
-          友链
-        </a>
       </div>
     </section>
 
-    <section class="section">
-      <h2 class="section-title">最新文章</h2>
-      <ol class="post-list">
-        <li class="post-item">
-          <a href="/2023/07/28/firstpost/">
-            <div class="post-meta-row">
-              <time datetime="2023-07-28">2023-07-28</time>
-              <span class="tag">blog</span>
+    <section class="section reveal" id="project">
+      <h2 class="section-title">项目</h2>
+
+      <article class="project">
+        <a class="project-cover" href="/projects/baotuquan-light/" aria-label="查看「趵突泉之光」项目详情">
+          <svg viewBox="0 0 640 280" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="pg" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#5b6cff"/>
+                <stop offset=".5" stop-color="#a855f7"/>
+                <stop offset="1" stop-color="#22d3ee"/>
+              </linearGradient>
+              <radialGradient id="pglow" cx=".58" cy=".52" r=".52">
+                <stop offset="0" stop-color="#a855f7" stop-opacity=".26"/>
+                <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <rect width="640" height="280" fill="url(#pglow)"/>
+
+            <g fill="none" stroke="url(#pg)" stroke-linecap="round">
+              <ellipse cx="376" cy="176" rx="52"  ry="17" stroke-width="2.4" opacity=".92"/>
+              <ellipse cx="376" cy="176" rx="96"  ry="31" stroke-width="1.9" opacity=".60"/>
+              <ellipse cx="376" cy="176" rx="142" ry="46" stroke-width="1.5" opacity=".38"/>
+              <ellipse cx="376" cy="176" rx="190" ry="61" stroke-width="1.2" opacity=".22"/>
+              <ellipse cx="376" cy="176" rx="242" ry="78" stroke-width="1.0" opacity=".13"/>
+            </g>
+
+            <g fill="none" stroke="url(#pg)" stroke-linecap="round">
+              <path d="M376 170 C 370 128, 366 96, 378 60" stroke-width="2.8"/>
+              <path d="M356 172 C 348 136, 346 112, 356 82" stroke-width="1.8" opacity=".6"/>
+              <path d="M396 172 C 404 138, 406 114, 396 86" stroke-width="1.8" opacity=".6"/>
+            </g>
+
+            <g fill="url(#pg)">
+              <circle cx="378" cy="50" r="5.6"/>
+              <circle cx="354" cy="72" r="3.6" opacity=".72"/>
+              <circle cx="400" cy="76" r="3.0" opacity=".58"/>
+              <circle cx="366" cy="104" r="2.4" opacity=".48"/>
+              <circle cx="390" cy="112" r="2.0" opacity=".36"/>
+            </g>
+
+            <g fill="none" stroke="url(#pg)" stroke-linecap="round" opacity=".26">
+              <path d="M40 244 C 96 232, 140 250, 196 240"/>
+              <path d="M448 248 C 504 236, 548 252, 604 242"/>
+            </g>
+          </svg>
+        </a>
+
+        <div class="project-body">
+          <div class="project-head">
+            <h3>趵突泉之光</h3>
+            <span class="spacer"></span>
+            <span class="pill pill-accent">v7.8</span>
+            <span class="pill">Android</span>
+          </div>
+
+          <p class="project-lead">
+            宿舍楼下的取水、洗澡、洗衣，原本散在三个不同的 App 里 —— 取水在「慧生活798」，
+            洗澡在「胖乖生活」，洗衣在支付宝的「智慧笑联」小程序。这个 App 把它们收进一个界面，
+            <strong>三个服务各自独立登录、并列可用</strong>。
+          </p>
+
+          <div class="trio">
+            <div class="trio-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7 6.8 9.4a6.6 6.6 0 1 0 10.4 0z"/></svg>
+              <b>取水</b><span>直饮水机</span>
             </div>
-            <h3>我的第一篇博客。</h3>
-            <p class="post-excerpt">从七月初鼓捣到现在，终于让我弄出了一个简陋的博客页面。五月还是六月的某一日，在threeline群里吹水时，看到群友的个人页面，于是发下宏愿：爷也要整一个自己的网站！</p>
-          </a>
-        </li>
-      </ol>
+            <div class="trio-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M7 5V3M17 5V3"/><path d="M8 9v2M12 9v4M16 9v2"/><path d="M6 20h12"/></svg>
+              <b>洗澡</b><span>宿舍浴室</span>
+            </div>
+            <div class="trio-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="12" cy="14" r="4.2"/><path d="M8 7h.01M11 7h.01"/></svg>
+              <b>洗衣</b><span>智慧笑联</span>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">设备记忆与分组</span>
+            <span class="chip">实时占用水位</span>
+            <span class="chip">扫码添加设备</span>
+            <span class="chip">桌面小组件</span>
+            <span class="chip">深色模式</span>
+            <span class="chip">自动检查更新</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="btn btn-primary" href="https://github.com/Baito-84170/baotuquan-light/releases/latest/download/baotuquan-light.apk">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+              下载 APK
+            </a>
+            <a class="btn" href="/projects/baotuquan-light/">项目详情</a>
+            <a class="btn" href="https://github.com/Baito-84170/baotuquan-light" target="_blank" rel="noopener noreferrer">源码</a>
+            <span class="project-note">419 KB · 直接下载即用</span>
+          </div>
+        </div>
+      </article>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title">关于</h2>
       <div class="note">
-        <p>这里是 Baito_84170 的博客。你也许能在其他平台看到我，我的另一个 id 是 <strong>Bait0.0</strong>。</p>
+        <p>这里是 Baito_84170 的主页。你也许能在其他平台看到我，我的另一个 id 是 <strong>Bait0.0</strong>。</p>
         <p>我在这里记录生活，记录感想，记录每一个天马行空的点子。</p>
         <p><a href="/about/">了解更多 →</a></p>
       </div>
