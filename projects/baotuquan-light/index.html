@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>趵突泉之光 · 项目 | Baito_84170</title>
-<meta name="description" content="趵突泉之光 —— 把山东大学趵突泉校区宿舍的取水、洗澡、洗衣三个服务整合进一个 Android 客户端。">
+<meta name="description" content="趵突泉之光 —— 把山东大学趵突泉校区宿舍的取水、洗澡、洗衣三个服务整合进一个客户端（Android 应用 + iOS Scriptable 脚本）。">
 <meta name="author" content="Baito_84170">
 <meta name="theme-color" content="#fbfbfe">
 
@@ -18,7 +18,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Baito_84170">
 <meta property="og:title" content="趵突泉之光 · 项目">
-<meta property="og:description" content="把宿舍的取水、洗澡、洗衣三个服务整合进一个 Android 客户端。">
+<meta property="og:description" content="把宿舍的取水、洗澡、洗衣三个服务整合进一个客户端（Android 应用 + iOS Scriptable 脚本）。">
 <meta property="og:url" content="https://baito-84170.github.io/projects/baotuquan-light/">
 <meta name="twitter:card" content="summary">
 
@@ -69,7 +69,7 @@
     <p class="breadcrumb"><a href="/">首页</a> <span aria-hidden="true">/</span> <span>项目</span></p>
 
     <section class="hero" style="margin-bottom:clamp(38px,6vw,60px)">
-      <span class="hero-badge"><span class="dot" aria-hidden="true"></span>Android · 个人项目</span>
+      <span class="hero-badge"><span class="dot" aria-hidden="true"></span>Android / iOS · 个人项目</span>
       <h1><span class="grad">趵突泉之光</span></h1>
       <p class="tagline">
         把宿舍楼下的<strong>取水</strong>、<strong>洗澡</strong>、<strong>洗衣</strong>，收进同一个 App。
@@ -79,15 +79,16 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
           下载 APK
         </a>
+        <a class="btn" href="#ios">iPhone / iPad 怎么装</a>
         <a class="btn" href="https://github.com/Baito-84170/baotuquan-light" target="_blank" rel="noopener noreferrer">查看源码</a>
-        <span class="pill pill-accent">v7.8</span>
+        <span class="pill pill-accent">v7.10.1</span>
       </div>
     </section>
 
     <section class="section reveal">
       <div class="stats">
         <div class="stat"><b>3</b><span>整合的服务</span></div>
-        <div class="stat"><b>419 KB</b><span>安装包大小</span></div>
+        <div class="stat"><b>442 KB</b><span>安装包大小</span></div>
         <div class="stat"><b>1</b><span>第三方依赖</span></div>
         <div class="stat"><b>0</b><span>行 Gradle 配置</span></div>
       </div>
@@ -190,7 +191,7 @@
         <pre><code>aapt2 compile  →  aapt2 link（生成 R.java）  →  javac
    →  d8 转 dex  →  把 classes.dex 装进 APK  →  zipalign  →  apksigner</code></pre>
         <p>唯一的第三方依赖是 <b>ZXing</b>（二维码解码，Apache-2.0）。界面全部用 Android 原生控件手写，
-          没有任何 UI 框架，所以安装包只有 419 KB。</p>
+          没有任何 UI 框架，所以安装包只有 442 KB。</p>
         <p>做法上是<b>照着功能自己写</b>：观察原有 App 的交互流程和接口协议，写清规格，再从零实现。
           不搬第三方的 smali / 资源，也不绕过任何签名或授权校验。</p>
       </div>
@@ -199,12 +200,32 @@
     <section class="section reveal">
       <h2 class="section-title">下载</h2>
       <div class="note">
-        <p><b>直接安装：</b><a href="https://github.com/Baito-84170/baotuquan-light/releases/latest/download/baotuquan-light.apk">下载最新 APK</a>（419 KB）。
+        <p><b>Android 直接安装：</b><a href="https://github.com/Baito-84170/baotuquan-light/releases/latest/download/baotuquan-light.apk">下载最新 APK</a>（442 KB）。
           第一次安装时安卓会拦一下，弹出「未知来源」时选<b>允许</b>即可。</p>
         <p><b>升级：</b>不要卸载重装 —— 卸载会清掉已记住的设备和登录状态。App 内会自动提示新版本，
           也可以直接覆盖安装。</p>
         <p><b>源码：</b><a href="https://github.com/Baito-84170/baotuquan-light" target="_blank" rel="noopener noreferrer">github.com/Baito-84170/baotuquan-light</a>
           （README 里有完整的构建步骤）</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="ios">
+      <h2 class="section-title">苹果手机也能用</h2>
+      <div class="prose">
+        <p>iOS 装不了 APK，但同样能用 —— 走 <b>Scriptable</b>（App Store 免费）。
+          <b>不需要 Mac、不需要开发者账号、不需要越狱。</b></p>
+      </div>
+      <div class="note">
+        <p><b>1.</b> App Store 装 <b>Scriptable</b>（作者 Simon B. Støvring，免费）</p>
+        <p><b>2.</b> 打开 <a href="https://github.com/Baito-84170/baotuquan-light/blob/main/ios/%E8%B6%B5%E7%AA%81%E6%B3%89%E4%B9%8B%E5%85%89.js" target="_blank" rel="noopener noreferrer">ios/趵突泉之光.js</a>
+          → 点 <b>Raw</b> → 全选 → 复制</p>
+        <p><b>3.</b> 打开 Scriptable → 右上角 <code>+</code> 新建脚本 → 全选删掉 → <b>粘贴</b> → 改名 → 运行</p>
+        <p>然后在 Scriptable 里长按脚本卡片选「<b>添加到主屏幕</b>」，点图标直接跑，和 App 一样。</p>
+      </div>
+      <div class="prose">
+        <p>📖 <a href="https://github.com/Baito-84170/baotuquan-light/blob/main/ios/README.md" target="_blank" rel="noopener noreferrer"><b>完整 iOS 教程</b></a>
+          —— 安装步骤、洗澡付款、常见问题都在里面。取水 / 洗澡 / 洗衣三个功能都有，
+          和 Android 版一致。</p>
       </div>
     </section>
 
